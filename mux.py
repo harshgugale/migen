@@ -19,5 +19,5 @@ def testbench(dut,selb):
  		yield
 		
 dut = mux(3)
-#run_simulation(dut,testbench(dut,3))
-print(verilog.convert(dut,{dut.inp,dut.out,dut.sel}))
+run_simulation(dut,testbench(dut,3))
+#print(verilog.convert(dut,{dut.inp,dut.out,dut.sel}))
