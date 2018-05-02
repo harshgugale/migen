@@ -8,7 +8,7 @@ class mux(Module):
 		self.inp = inp = Signal(2**selb)
 		
 		for j in range(2**selb):
-			self.comb += If(sel == j,out.eq(inp[sel]))
+			self.comb += If(sel == j,out.eq(inp[selb]))
 			
 	
 def testbench(dut):
@@ -18,4 +18,4 @@ def testbench(dut):
 		print("Sel {} out {}".format(i,(yield dut.out)))
 
 dut = mux(3)
-run_simulation(dut,tesbench(dut))
+run_simulation(dut,testbench(dut))
