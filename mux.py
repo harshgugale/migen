@@ -12,11 +12,11 @@ class mux(Module):
 			self.comb += If(sel == j,out.eq(inp[j]))	
 	
 def testbench(dut,selb):
- 	yield dut.inp.eq(0b00000001)
+ 	yield dut.inp.eq(0b00001001)
  	for i in range(2**selb):
  		yield dut.sel.eq(i)
- 		print("Sel {} out {}".format(i,(yield dut.out)))
  		yield
+ 		print("Sel {} out {}".format(i,(yield dut.out)))
 		
 dut = mux(3)
 run_simulation(dut,testbench(dut,3))
